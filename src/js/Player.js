@@ -588,7 +588,9 @@ export default class Player extends Phaser.Physics.Arcade.Sprite {
         // contact avec les murs
         if (this.canFly()) return true;
         if (this.canWallJump() && (this.body.blocked.right == true || this.body.blocked.left == true)) return true;
-        if (this.remainingJump > 0)  return true;
+        // Only allow jump when on floor or on ladder (no double jump)
+        if (this.body.onFloor() || this.onLadder) return true;
+        return false;
     }
 
     updateJumpStatut() {

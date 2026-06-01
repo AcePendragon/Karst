@@ -171,7 +171,13 @@ export default class map_recto extends Phaser.Scene {
   // Gestion de la collision joueur/plateforme en présence d'une échelle
   checkLadderSpecifics(player, platform) {
     if (player.verticalDirection === "up" && player.onLadder) {
-      return player.isMoving;
+      // Vérifie si le tile au-dessus est grimpable avant de désactiver la collision
+      const tileUp = this.gameplay_layer.getTileAtWorldXY(player.x, player.getTopCenter().y - 1);
+      if (tileUp && tileUp.properties && tileUp.properties.estGrimpable) {
+        return player.isMoving;
+      }
+      // Si le tile n'est pas grimpable, garde la collision active
+      return true;
     }
     // Permet de descendre des tuiles grimpables seulement si on est sur une échelle
     if (player.onLadder && this.cursor.down.isDown) {

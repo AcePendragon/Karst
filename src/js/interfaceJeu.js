@@ -105,8 +105,8 @@ export default class interfaceJeu extends Phaser.Scene {
         // Boucle pour afficher les cœurs en fonction du nombre de points de vie
         for (let i = 0; i < this.getPlayerHealth(); i++) {
             let heart = this.add.image(x, y, 'coeur').setOrigin(0, 0);
-            heart.setDisplaySize(24, 24); // Ajuster l'échelle si nécessaire
-            x += 28; // Espacement entre les cœurs
+            heart.setDisplaySize(48, 48); // Ajuster l'échelle si nécessaire
+            x += 52; // Espacement entre les cœurs
             this.heartsGroup.add(heart);
         }
     }
