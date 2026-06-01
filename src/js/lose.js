@@ -24,7 +24,7 @@ export default class lose extends Phaser.Scene {
     // Configuration des touches
     this.upKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
     this.downKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.DOWN);
-    this.confirmKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.K);
+    this.confirmKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
 
     // Initialiser le focus sur le bouton
     this.updateButtonSelection();

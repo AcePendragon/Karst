@@ -7,7 +7,7 @@ export default class DialogBox extends Phaser.Scene {
 
     create(data) {
         this.sceneToResume = data.sceneToResume;
-        this.confirmKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.K);
+        this.confirmKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
 
         const dialogBackground = this.add.graphics();
         dialogBackground.fillStyle(0x000000, 0.7);
