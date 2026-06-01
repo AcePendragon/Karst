@@ -260,34 +260,37 @@ export default class loading extends Phaser.Scene {
             console.log("Fichiers item_to_collect_*** chargés :", loadedItemToCollectFiles);
             
             this.game.config.default_gravity = this.physics.world.gravity.y;
-            
+
+            // Set global sound volume
+            this.sound.volume = 0.3;
+
             // ajout des sons
             
             if (this.cache.audio.exists("son_bullet")) {
-                this.game.config.son_bullet = this.sound.add("son_bullet");
+                this.game.config.son_bullet = this.sound.add("son_bullet", { volume: 0.3 });
             } else {
                 console.warn("Audio file 'son_bullet' not loaded properly.");
             }
-                                    
+
             if (this.cache.audio.exists("son_game")) {
-                this.game.config.son_game = this.sound.add("son_game");
+                this.game.config.son_game = this.sound.add("son_game", { volume: 0.3 });
             }
             else {
                 console.warn("Audio file 'son_game' not loaded properly.");
             }
             if (this.cache.audio.exists("son_game_over")) {
-                this.game.config.son_game_over = this.sound.add("son_game_over");
+                this.game.config.son_game_over = this.sound.add("son_game_over", { volume: 0.3 });
             } else {
                 console.warn("Audio file 'son_game_over' not loaded properly.");
             }
             if (this.cache.audio.exists("son_win")) {
-                this.game.config.son_win = this.sound.add("son_win");
+                this.game.config.son_win = this.sound.add("son_win", { volume: 0.3 });
             } else {
                 console.warn("Audio file 'son_win' not loaded properly.");
             }
-            
+
             if (this.cache.audio.exists("son_intro")) {
-                this.game.config.son_intro = this.sound.add("son_intro");
+                this.game.config.son_intro = this.sound.add("son_intro", { volume: 0.3 });
             } else {
                 console.warn("Audio file 'son_intro' not loaded properly.");
             }
